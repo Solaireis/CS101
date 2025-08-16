@@ -1,3 +1,8 @@
 A
 *.dSYM*
 .vscode/tasks.json
+3DeclaringVariable
+1_workshop
+2_workshop
+.gitignore
+4_functions
