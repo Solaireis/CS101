@@ -7,6 +7,7 @@ int main(void) {
     int n2;
     int n3;
     int n4;
+    //initializes the values & get users input
     printf("Enter Number:");
     scanf("%d",&n);
 
@@ -24,6 +25,6 @@ int main(void) {
 
     n4 = n % 10; //gets the 1st digit
 
-
+    //print statement
     printf("%d + %d + %d + %d + %d = %d\n" , n0 ,n1, n2, n3, n4, n0 + n1 + n2 + n3 + n4);
 }
