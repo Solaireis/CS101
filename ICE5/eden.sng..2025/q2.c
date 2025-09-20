@@ -22,7 +22,7 @@ int main(void) {
         printf("Test 1\n");
         int result = max2(3, 2);
         printf("Expected:3\n");
-        printf("Actual  :%s\n\n", result);
+        printf("Actual  :%d\n\n", result);
     }
 
     {

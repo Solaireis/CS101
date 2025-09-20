@@ -1,13 +1,23 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 void print_even_numbers (int x){
+    //check if last number is odd or even
+    bool is_even = true;
+    if ( x % 2 != 0){
+        is_even = false;
+    }
     for ( int i = 1; i<= x; i++){
         if (i == x && i % 2 == 0){
-            printf("{%d}",i);
-        } else if (i % 2 == 0){
+            printf("{%d}",i); // do a check if last number is odd do not print space
+        } else if ((i+1 == x) && (i % 2 == 0)) { 
+            printf("{%d}",i); 
+        }
+        else if (i % 2 == 0){
             printf("{%d}",i);
             printf(" ");
-        }
+        } 
+
     
 
     }
@@ -39,7 +49,7 @@ int main(void) {
     print_even_numbers(13);
     printf("]\n\n");
 
-    printf("Test 4\n");
+    printf("Test 5\n");
     printf("Expected:[{2} {4} {6} {8} {10} {12} {14}]\n");
     printf("Actual  :[");
     print_even_numbers(14);
