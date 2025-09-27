@@ -1,6 +1,18 @@
 #include <stdio.h>
 
 
+void bubble_sort (int arr[] , int n){
+    for (int j=1; j < n ; j++ ){ // number of pass
+        for ( int i = 0 ; i < (n-1) ; i++){ // does the sorting 
+            if (arr[i] > arr [i+1]){
+                int temp = arr[i+1];
+                arr[i+1] = arr[i];
+                arr[i] = temp;
+            }
+    }
+    }
+    
+}
 void print_array(int values[], int length) {
     for (int i = 0; i < length; i++) {
         printf("%d ", values[i]);

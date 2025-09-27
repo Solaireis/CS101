@@ -28,6 +28,8 @@ void print_expanded_form(int n){
         if (is_first){
             is_first=false;
             printf("%d",temp); 
+        } else if (temp == 0) {
+            printf(""); 
         } else {
             printf(" + %d",temp);
         }

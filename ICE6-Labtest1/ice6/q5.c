@@ -1,23 +1,29 @@
 #include <stdio.h>
 #include <stdbool.h>
 int get_smallest_pair (int num){
+    // check if negative
+    bool is_positive = true;
+    if (num < 10){
+        return -1;
+    }
     int smallest_pair = 0;
-
+    int is_first = true;
     while (num>0){
         int pair = 0;
-        int is_first = true;
+        
         pair = num % 100;
         if (is_first){
             is_first = false;
             smallest_pair = pair; 
-            printf("\n%d\n",smallest_pair);
+            //printf("\n%d\n",smallest_pair);
         }
-        if (pair < smallest_pair){
+        if ( (num/10) > 0 && pair < smallest_pair){
             smallest_pair = pair;
         }
         num = num/10;
     }
 
+    //printf("%d",smallest_pair);
     return smallest_pair;
 }
 

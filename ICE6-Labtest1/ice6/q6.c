@@ -1,17 +1,38 @@
 #include <stdio.h>
 void print_pascal(int n) {
 
-    int previous_array [10000] = {1};
-    int current_array[10000] ={0};
+    int previous_array [10000] = {1}; // store the previous array
+    int current_array[10000] ={0}; // store the current array
     //printf("1\n");
-    for(int r=1; r<n; r++){
-        for (int c=1; c<n; c++){
-            if (c== 1 || c==r){
-                printf("1 "); + previous_array[c-1];
-                printf("%d ",to_print);
+    for(int r=1; r<n+1; r++){ // builds the row
+            for (int i = 1 ; i<n; i++){
+                previous_array[i-1] = current_array [i-1];
+                //printf("%d",previous_array[i-1]);
+            }   
+
+            // add the current array to the previous array
+            for (int c=1; c<n+1; c++){ // builds the columns
+
+                // do the new current array
+                if (c == 1 || c == r){ // careful of using c=1 instead of c==1
+                    //printf("1") //check positioning
+                    current_array[c-1] = 1;
+                
+                } else if (  c < r) {
+                    //printf("0 "); // check positioning
+                    // add the values of the previous array to the current array 
+                    //take the first two numbers of the array and add them together
+                    current_array[c-1] = previous_array [c-2] + previous_array[c-1];
+
+                }
+                if (current_array[c-1]>0){
+                    printf("%d ",current_array[c-1]);
+                }
+        
             }
-        }
         printf("\n");
+        // add the current array to the previous array 
+        
     }
 }
 int main(void) {
